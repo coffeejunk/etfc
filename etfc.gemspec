@@ -10,7 +10,8 @@ Gem::Specification.new do |spec|
   spec.email         = ['mxhaack@gmail.com']
 
   spec.summary       = 'A flickr collage maker'
-  spec.description   = 'ETFC is a tool to create collages from flickr images based upon user provided keywords.'
+  spec.description   = 'ETFC is a tool to create collages from flickr ' \
+                       'images based upon user provided keywords.'
   spec.homepage      = 'https://www.github.com/coffeejunk/etfc'
   spec.license       = 'MIT'
 
