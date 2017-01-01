@@ -10,3 +10,4 @@ end
 require 'etfc/version'
 require 'etfc/flickr'
 require 'etfc/image'
+require 'etfc/collage'
