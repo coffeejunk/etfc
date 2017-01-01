@@ -1,7 +1,9 @@
 require 'open-uri'
+require 'rmagick'
 
 module ETFC
   module Image
+    include Magick
     module_function
 
     # Public: Download a file and save it to the temporary folder
