@@ -1,2 +1,7 @@
 Documentation:
   Enabled: false
+
+ZeroLengthPredicate:
+  Exclude:
+    # the returned list doesn't respond_to? empty?
+    - 'lib/etfc/flickr.rb'
