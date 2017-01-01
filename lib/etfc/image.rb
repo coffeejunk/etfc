@@ -3,7 +3,6 @@ require 'rmagick'
 
 module ETFC
   module Image
-    include Magick
     module_function
 
     # Public: Download a file and save it to the temporary folder
@@ -22,6 +21,24 @@ module ETFC
       download = open(url)
       IO.copy_stream(download, path)
       path
+    end
+
+    # Public: Crop an image
+    #
+    # image  - path of the image that shall be cropped
+    # width  - OPTIONAL width,  defaults to 300
+    # height - OPTIONAL height, defaults to 300
+    #
+    # Examples:
+    #
+    #  crop('/abc/123.jpg')
+    #  #=> #<Magick::Image:70103481521220> => /abc/123.jpg JPEG
+    #                      800x600=>300x300 800x600+250+150 DirectClass 8-bit
+    #
+    # Returns Magick::Image with the crop transformation queued
+    def crop(image, width = 300, height = 300)
+      img = Magick::Image.read(image)[0]
+      img.crop(Magick::CenterGravity, width, height)
     end
   end
 end

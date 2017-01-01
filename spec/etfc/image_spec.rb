@@ -12,4 +12,17 @@ describe ETFC::Image do
     it 'handles network errors'
     # retry on network first failure; raise and exit if it fails again
   end
+
+  context '.crop' do
+    it 'crops an image rectangularly' do
+      result = ETFC::Image.crop('fixtures/images/1.jpg')
+      expect(result.columns).to eq(result.rows)
+    end
+
+    it 'crops an image to a given size' do
+      result = ETFC::Image.crop('fixtures/images/1.jpg', 200, 400)
+      expect(result.columns).to eq(200)
+      expect(result.rows).to eq(400)
+    end
+  end
 end
