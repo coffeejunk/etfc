@@ -2,6 +2,10 @@ require 'spec_helper'
 
 describe ETFC::Image do
   context '.download' do
+    after(:each) do
+      File.delete(ETFC::TMP_DIR + '/blank.jpg')
+    end
+
     it 'downloads an image' do
       VCR.use_cassette('download_blank_image') do
         url = 'https://upload.wikimedia.org/wikipedia/en/4/48/Blank.JPG'
