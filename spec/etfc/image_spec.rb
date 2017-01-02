@@ -14,13 +14,23 @@ describe ETFC::Image do
   end
 
   context '.crop' do
+    let(:img) { 'fixtures/1.jpg' }
+
+    before(:each) do
+      FileUtils.cp 'fixtures/images/1.jpg', img
+    end
+
+    after(:each) do
+      File.delete(img)
+    end
+
     it 'crops an image rectangularly' do
-      result = ETFC::Image.crop('fixtures/images/1.jpg')
+      result = ETFC::Image.crop(img)
       expect(result.columns).to eq(result.rows)
     end
 
     it 'crops an image to a given size' do
-      result = ETFC::Image.crop('fixtures/images/1.jpg', 200, 400)
+      result = ETFC::Image.crop(img, 200, 400)
       expect(result.columns).to eq(200)
       expect(result.rows).to eq(400)
     end

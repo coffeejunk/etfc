@@ -23,7 +23,7 @@ module ETFC
       path
     end
 
-    # Public: Crop an image
+    # Public: Crop an image destructively
     #
     # image  - path of the image that shall be cropped
     # width  - OPTIONAL width,  defaults to 300
@@ -38,7 +38,8 @@ module ETFC
     # Returns Magick::Image with the crop transformation queued
     def crop(image, width = 300, height = 300)
       img = Magick::Image.read(image)[0]
-      img.crop(Magick::CenterGravity, width, height)
+      img.crop!(Magick::CenterGravity, width, height)
+      img.write(image)
     end
   end
 end
