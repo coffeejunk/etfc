@@ -4,6 +4,14 @@ ETFC is your friendly flickr collage creator. You give it a few keywords like
 'butter', 'rick sanchez' and 'purpose'; ETFC will then go and fetch the most
 interesting related pictures from flickr and create a collage of 5x2 images.
 
+## Prerequisites
+
+ImageMagick needs to be installed, check http://www.imagemagick.org/ for
+instructions.
+
+Though not strictly necessary, the user is advised to ensure a [words
+file](https://en.wikipedia.org/wiki/Words_(Unix)) is present.
+
 ## Installation
 
 You probably want to use ETFC from your command line, in order to do so simply
