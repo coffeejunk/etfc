@@ -1,3 +1,11 @@
 #!/usr/bin/env ruby
 
-puts "ETFC\n> your friendly flickr collage creator"
+Signal.trap('INT') { exit 1 }
+
+require 'pathname'
+exe = Pathname.new(__FILE__).realpath
+
+$LOAD_PATH.unshift File.expand_path('../../lib', exe)
+require 'etfc/cli'
+
+ETFC::CLI.start(ARGV)
