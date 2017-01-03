@@ -8,11 +8,21 @@ interesting related pictures from flickr and create a collage of 5x2 images.
 
 ## Prerequisites
 
+### Software
+
 ImageMagick needs to be installed, check http://www.imagemagick.org/ for
 instructions.
 
 Though not strictly necessary, the user is advised to ensure a [words
 file](https://en.wikipedia.org/wiki/Words_(Unix)) is present.
+
+### Flickr API Key
+
+Flickr requires an API Key and Shared Secret for communication with their API,
+unfortunately we can't distribute these with the source code and thus you will
+have to go through their simple registration process to receive these. Simply
+go to [Flickr's App Garden](https://www.flickr.com/services/apps/create) and
+register an application of your own.
 
 ## Installation
 
@@ -34,7 +44,32 @@ And then execute:
 
 ## Usage
 
-tbd
+As mentioned under the [Prerequisites](#prerequisites), you will need an API
+Key and Shared Secret. Place these as environment variables in your terminal
+environment:
+
+  $ export FLICKR_API_KEY=abcdef12341abcdef 
+  $ export FLICKR_SHARED_SECRET=fedcba321 
+
+### CLI usage
+
+To create a collage use the following command:
+
+  $ etfc collage best_collage_ever.jpg --keywords=butter 'rick sanchez' purpose
+
+### API usage
+
+You can use ETFC as a gem in your application and (re-)use it's functionality
+for your own purposes. ETFC consist of several modules each serving a singular
+purpose: 
+
+- `ETFC::Flickr`     -> Flickr search
+- `ETFC::Image`      -> Image download and cropping
+- `ETFC::Collage`    -> Collage creation
+- `ETFC::Dictionary` -> Random word selection from the (system) dictionary
+
+Refer to the individual module's documentation for usage details, or have
+a look at the `ETFC::Runner` on how to tie them all together.
 
 ## Development
 
