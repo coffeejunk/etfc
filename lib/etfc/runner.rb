@@ -15,6 +15,8 @@ module ETFC
     # Returns Magick::ImageList; can be discarded as the collage will be saved
     # to the supplied file name on disk
     def run(keywords, output)
+      check_api_credentials
+
       images_urls = ten_img_urls(keywords)
 
       images_urls.each_with_index do |url, idx|
@@ -51,6 +53,13 @@ module ETFC
       end
 
       images.take(10)
+    end
+
+    def check_api_credentials
+      return if ETFC::FLICKR_API_KEY || ETFC::FLICKR_SHARED_SECRET
+      puts 'Please set FLICKR_API_KEY and FLICKR_SHARED_SECRET as ' \
+           'environment variables'
+      exit 1
     end
   end
 end
