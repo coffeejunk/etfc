@@ -48,14 +48,14 @@ As mentioned under the [Prerequisites](#prerequisites), you will need an API
 Key and Shared Secret. Place these as environment variables in your terminal
 environment:
 
-  $ export FLICKR_API_KEY=abcdef12341abcdef 
-  $ export FLICKR_SHARED_SECRET=fedcba321 
+    $ export FLICKR_API_KEY=abcdef12341abcdef 
+    $ export FLICKR_SHARED_SECRET=fedcba321 
 
 ### CLI usage
 
 To create a collage use the following command:
 
-  $ etfc collage best_collage_ever.jpg --keywords=butter 'rick sanchez' purpose
+    $ etfc collage best_collage_ever.jpg --keywords=butter 'rick sanchez' purpose
 
 ### API usage
 
