@@ -1,6 +1,13 @@
 module ETFC
-  module Dictionary
-    module_function
+  class Dictionary
+    def initialize
+      init
+    end
+
+    # Private: Memorize 20 words from the system dictionary
+    def init
+      @words = dictionary.sample(20).map(&:strip)
+    end
 
     # Public: Returns a random word
     #
@@ -11,7 +18,9 @@ module ETFC
     #
     # Returns a random word (String)
     def random
-      dictionary.sample.strip
+      init if @words.empty?
+
+      @words.pop
     end
 
     # Private: Returns a dictionary

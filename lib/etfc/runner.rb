@@ -44,8 +44,9 @@ module ETFC
         Flickr.search(keyword)
       end.reject(&:nil?)
 
+      dict = Dictionary.new
       while images.length < 10
-        result = Flickr.search(Dictionary.random)
+        result = Flickr.search(dict.random)
         images << result unless result.nil?
       end
 
