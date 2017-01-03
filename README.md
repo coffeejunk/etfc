@@ -4,6 +4,8 @@ ETFC is your friendly flickr collage creator. You give it a few keywords like
 'butter', 'rick sanchez' and 'purpose'; ETFC will then go and fetch the most
 interesting related pictures from flickr and create a collage of 5x2 images.
 
+![Sample Collage](sample_collage.jpg)
+
 ## Prerequisites
 
 ImageMagick needs to be installed, check http://www.imagemagick.org/ for
