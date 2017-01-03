@@ -1,8 +1,8 @@
 require 'tmpdir'
 
 module ETFC
-  FLICKR_API_KEY = 'API_KEY'.freeze
-  FLICKR_SHARED_SECRET = 'SHARED_SECRET'.freeze
+  FLICKR_API_KEY = ENV['FLICKR_API_KEY']
+  FLICKR_SHARED_SECRET = ENV['FLICKR_SHARED_SECRET']
 
   TMP_DIR = Dir.mktmpdir
 end

@@ -19,8 +19,6 @@ module ETFC
     etfc collage best_collage_ever.jpg --keywords=butter 'rick sanchez' purpose
     LONG
     option :keywords, type: :array, required: true
-    option :api_key,  type: :string
-    option :secret,   type: :string
     def collage(result = 'collage.jpg')
       ETFC::Runner.run(options[:keywords], result)
     end
