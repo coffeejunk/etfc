@@ -21,6 +21,12 @@ module ETFC
     option :keywords, type: :array, required: true
     def collage(result = 'collage.jpg')
       ETFC::Runner.run(options[:keywords], result)
+    rescue SocketError, Timeout::Error, Errno::EINVAL, Errno::ECONNRESET,
+           EOFError, Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError,
+           Net::ProtocolError, Errno::ECONNREFUSED
+      puts 'There was a problem with the network connection. Please check ' \
+           'your network and try again.'
+      exit 1
     end
   end
 end
