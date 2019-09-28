@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_runtime_dependency 'flickraw', '~> 0.9.9'
-  spec.add_runtime_dependency 'rmagick', '~> 2.16.0'
+  spec.add_runtime_dependency 'rmagick', '~> 4.1.0.rc2'
   spec.add_runtime_dependency 'thor', '~> 0.19.4'
 
   spec.add_development_dependency 'bundler', '~> 2.0'
